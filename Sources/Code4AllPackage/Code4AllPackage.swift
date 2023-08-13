@@ -2,14 +2,6 @@ import Foundation
 import SwiftUI
 import Accessibility
 
-public struct Code4AllPackage {
-    public private(set) var text = "Hello, World!"
-    
-    public init() {
-    }
-    
-}
-
 @available(iOS 15.0, *)
 @available(macOS 12.0, *)
 public struct Text4All: View {
@@ -137,59 +129,3 @@ public struct Button4All: View {
         .padding()
     }
 }
-
-//@available(iOS 15.0, *)
-//@available(macOS 12.0, *)
-//struct DropDownList: View {
-//    @Binding var value: String
-//    var placeholder = "Select Client"
-//    var dropDownList = ["PSO", "PFA", "AIR", "HOT"]
-//    var body: some View {
-//        Menu {
-//            ForEach(dropDownList, id: \.self){ client in
-//                Button(client) {
-//                    self.value = client
-//                }
-//            }
-//        } label: {
-//            VStack(spacing: 5){
-//                HStack{
-//                    Text(value.isEmpty ? placeholder : value)
-//                        .foregroundColor(value.isEmpty ? .gray : .black)
-//                    Spacer()
-//                    Image(systemName: "chevron.down")
-//                        .foregroundColor(Color.orange)
-//                        .font(Font.system(size: 20, weight: .bold))
-//                }
-//                .padding(.horizontal)
-//                Rectangle()
-//                    .fill(Color.orange)
-//                    .frame(height: 2)
-//            }
-//        }
-//    }
-//}
-@available(iOS 15.0, *)
-@available(macOS 12.0, *)
-public struct CardView: View {
-    var height: CGFloat = 200 // default height
-    
-    public var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .stroke(Color.gray, lineWidth: 2)
-            .frame(height: height)
-            .padding()
-            .overlay(
-                VStack {
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                    
-                    Text("John Doe")
-                        .font(.title)
-                }
-            )
-    }
-}
-
-
